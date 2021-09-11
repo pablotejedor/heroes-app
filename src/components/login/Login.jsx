@@ -8,7 +8,7 @@ const Login = ({ history }) => {
     try {
       const response = await axios({
         method: 'POST',
-        url: 'http://challenge-react.alkemy.org',
+        url: 'https://challenge-react.alkemy.org',
         data: {
           email: values.email,
           password: values.password,
