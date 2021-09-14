@@ -3,11 +3,13 @@ import { HeroCardTeam } from './HeroCardTeam';
 export const MyTeam = ({ heroTeam }) => {
   console.log(heroTeam);
   return (
-    <div>
+    <>
       <h1>MyTeam</h1>
-      {heroTeam.map(hero => (
-        <HeroCardTeam hero={hero} key={hero.id} />
-      ))}
-    </div>
+      <div className="d-flex">
+        {heroTeam.map(hero => (
+          <HeroCardTeam hero={hero} key={hero.id} />
+        ))}
+      </div>
+    </>
   );
 };

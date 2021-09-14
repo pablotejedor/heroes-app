@@ -6,7 +6,9 @@ export const Home = () => {
   return (
     <>
       <Search setHeroTeam={setHeroTeam} />
-      <MyTeam heroTeam={heroTeam} />
+      <div className='d-flex'>
+        <MyTeam heroTeam={heroTeam} />
+      </div>
     </>
   );
 };

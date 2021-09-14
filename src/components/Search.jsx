@@ -76,16 +76,22 @@ export const Search = ({ setHeroTeam }) => {
           <div className="col-7">
             <h4> Results </h4>
             <hr />
-            <div className="card">
-              {search ? (
-                search.map(hero => (
-                  <HeroCard key={hero.id} hero={hero} setHeroTeam={setHeroTeam} />
-                ))
-              ) : (
-                <p className="text-danger">
-                  No results. Please enter a valid name
-                </p>
-              )}
+            <div className='d-flex'>
+              <div className="card">
+                {search ? (
+                  search.map(hero => (
+                    <HeroCard
+                      key={hero.id}
+                      hero={hero}
+                      setHeroTeam={setHeroTeam}
+                    />
+                  ))
+                ) : (
+                  <p className="text-danger">
+                    No results. Please enter a valid name
+                  </p>
+                )}
+              </div>
             </div>
           </div>
         </div>
