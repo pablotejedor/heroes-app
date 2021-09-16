@@ -46,10 +46,10 @@ export const Search = ({ heroTeam, setHeroTeam }) => {
             >
               {({ errors, isValid, touched }) => (
                 <Form>
-                  <div className="d-flex mb-3">
+                  <div className="d-flex m-3">
                     <Field
                       type="search"
-                      className="form-control"
+                      className="form-control m-1"
                       //   id="inputsearch"
                       name="search"
                       placeholder="Search a hero by name"
@@ -59,7 +59,7 @@ export const Search = ({ heroTeam, setHeroTeam }) => {
                     ) : null}
                     <button
                       type="submit"
-                      className="btn btn-primary"
+                      className="btn btn-primary m-1"
                       disabled={!isValid}
                     >
                       Search

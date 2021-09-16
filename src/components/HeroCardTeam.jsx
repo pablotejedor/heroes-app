@@ -19,17 +19,17 @@ export const HeroCardTeam = ({ hero }) => {
           <button
             type="button"
             className="btn btn-success m-1"
-            data-tip
-            data-for="attributes-tooltip"
+            data-tip="attributes"
+            data-for={hero.name}
           >
             Attributes
           </button>
 
           <ReactTooltip
-            id="attributes-tooltip"
+            id={hero.name}
             place="top"
             type="success"
-            effect="float"
+            effect="solid"
           >
             Combat: {hero.powerstats.combat}
             <br />
@@ -46,17 +46,18 @@ export const HeroCardTeam = ({ hero }) => {
           <button
             type="button"
             className="btn btn-success m-1"
-            data-tip
-            data-for="info-tooltip"
+            data-tip="info"
+            data-for={hero.id}
             data-multiline="true"
+            id={hero.id}
           >
             Info
           </button>
           <ReactTooltip
-            id="info-tooltip"
+            id={hero.id}
             place="top"
             type="success"
-            effect="float"
+            effect="solid"
           >
             Weight: {hero.appearance.weight[1]}
             <br />
