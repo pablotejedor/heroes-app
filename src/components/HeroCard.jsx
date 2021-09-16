@@ -1,47 +1,29 @@
 import React from 'react';
 
-export const HeroCard = ({ hero, setHeroTeam }) => {
+export const HeroCard = ({ hero, heroTeam, setHeroTeam }) => {
   const colors = {
     good: '#236494',
     bad: '#b61617',
   };
   const backgroundImage = {
     backgroundColor: `${colors[hero.biography.alignment]}`,
-    width: '18rem',
+    width: '10rem',
   };
-
-  // return (
-  //   <div
-  //     className="card ms-3 animate__animated animate__fadeIn m-5"
-  //     style={backgroundImage}
-  //   >
-  //     <div className="row no-gutters">
-  //       <div className="col-md-4">
-  //         <img src={hero.image.url} className="card-img" alt={hero.id} />
-  //       </div>
-  //       <div className="col-md-8">
-  //         <h5> {hero.name} </h5>
-  //         <button
-  //           onClick={() => setHeroTeam(member => [hero, ...member])}
-  //           type="button"
-  //           className="btn btn-light"
-  //         >
-  //           Add to my team
-  //         </button>
-  //       </div>
-  //     </div>
-  //   </div>
-  // );
-  
   return (
-    <div class="card" style={backgroundImage}>
-      <img class="card-img-top" src={hero.image.url} alt={hero.id} />
-      <div class="card-body">
-        <h5 class="card-title">{hero.name}</h5>
+    <div className="card m-1 text-center" style={backgroundImage}>
+      <img className="card-img-top col-5" src={hero.image.url} alt={hero.id} />
+      <div className="card-body">
+        <h5 className="card-title">{hero.name}</h5>
         <button
-          onClick={() => setHeroTeam(member => [hero, ...member])}
+          onClick={() => {
+            if (heroTeam.length > 5) {
+              alert('Your team must have six members');
+            } else {
+              setHeroTeam(heroTeam => [hero, ...heroTeam]);
+            }
+          }}
           type="button"
-          className="btn btn-light"
+          className="btn btn-dark"
         >
           Add to my team
         </button>

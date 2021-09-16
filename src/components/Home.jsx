@@ -5,10 +5,9 @@ export const Home = () => {
   const [heroTeam, setHeroTeam] = useState([]);
   return (
     <>
-      <Search setHeroTeam={setHeroTeam} />
-      <div className='d-flex'>
-        <MyTeam heroTeam={heroTeam} />
-      </div>
+      <Search setHeroTeam={setHeroTeam} heroTeam={heroTeam} />
+      <h1>My team</h1>
+      <MyTeam heroTeam={heroTeam} />
     </>
   );
 };

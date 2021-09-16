@@ -3,7 +3,7 @@ import { Formik, Field, Form } from 'formik';
 import axios from 'axios';
 import { HeroCard } from './HeroCard';
 
-export const Search = ({ setHeroTeam }) => {
+export const Search = ({ heroTeam, setHeroTeam }) => {
   const [serverError, setServerError] = useState(null);
   const [search, setSearch] = useState([]);
   const handleSubmit = async value => {
@@ -24,7 +24,7 @@ export const Search = ({ setHeroTeam }) => {
     <div className="mt-5">
       <div>
         <div className="row">
-          <div className="col-5">
+          <div>
             <h4>Search:</h4>
             <hr />
             <Formik
@@ -46,7 +46,7 @@ export const Search = ({ setHeroTeam }) => {
             >
               {({ errors, isValid, touched }) => (
                 <Form>
-                  <div className="mb-3">
+                  <div className="d-flex mb-3">
                     <Field
                       type="search"
                       className="form-control"
@@ -57,41 +57,36 @@ export const Search = ({ setHeroTeam }) => {
                     {errors.search && touched.search ? (
                       <div className="text-danger">{errors.search}</div>
                     ) : null}
+                    <button
+                      type="submit"
+                      className="btn btn-primary"
+                      disabled={!isValid}
+                    >
+                      Search
+                    </button>
                   </div>
-                  <button
-                    type="submit"
-                    className="btn btn-primary"
-                    disabled={!isValid}
-                  >
-                    Search
-                  </button>
                   {serverError ? (
                     <div className="text-danger">{serverError}</div>
                   ) : null}
                 </Form>
               )}
             </Formik>
-          </div>
-
-          <div className="col-7">
-            <h4> Results </h4>
-            <hr />
-            <div className='d-flex'>
-              <div className="card">
-                {search ? (
-                  search.map(hero => (
-                    <HeroCard
-                      key={hero.id}
-                      hero={hero}
-                      setHeroTeam={setHeroTeam}
-                    />
-                  ))
-                ) : (
-                  <p className="text-danger">
-                    No results. Please enter a valid name
-                  </p>
-                )}
-              </div>
+            <div className="d-flex flex-wrap m-3">
+              {search ? (
+                search.map(hero => (
+                  <HeroCard
+                    className="card m-3"
+                    key={hero.id}
+                    hero={hero}
+                    setHeroTeam={setHeroTeam}
+                    heroTeam={heroTeam}
+                  />
+                ))
+              ) : (
+                <p className="text-danger">
+                  No results. Please enter a valid name
+                </p>
+              )}
             </div>
           </div>
         </div>
