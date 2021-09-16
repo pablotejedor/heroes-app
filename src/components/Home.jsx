@@ -7,7 +7,7 @@ export const Home = () => {
     <>
       <Search setHeroTeam={setHeroTeam} heroTeam={heroTeam} />
       <h1>My team</h1>
-      <MyTeam heroTeam={heroTeam} />
+      <MyTeam heroTeam={heroTeam} setHeroTeam={setHeroTeam}/>
     </>
   );
 };

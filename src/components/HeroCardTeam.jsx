@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactTooltip from 'react-tooltip';
-export const HeroCardTeam = ({ hero }) => {
+export const HeroCardTeam = ({ hero, heroTeam, setHeroTeam }) => {
   const colors = {
     good: '#236494',
     bad: '#b61617',
@@ -9,7 +9,13 @@ export const HeroCardTeam = ({ hero }) => {
     backgroundColor: `${colors[hero.biography.alignment]}`,
     width: '10rem',
   };
-  console.log(hero);
+  
+  const deleteHero = () => {
+    const filteredList = heroTeam.filter(x => {
+      return x.id !== hero.id;
+    });
+    setHeroTeam(filteredList)
+  };
   return (
     <div className="m-3 text-center" style={backgroundImage}>
       <img className="card-img-top" src={hero.image.url} alt={hero.id} />
@@ -53,12 +59,7 @@ export const HeroCardTeam = ({ hero }) => {
           >
             Info
           </button>
-          <ReactTooltip
-            id={hero.id}
-            place="top"
-            type="success"
-            effect="solid"
-          >
+          <ReactTooltip id={hero.id} place="top" type="success" effect="solid">
             Weight: {hero.appearance.weight[1]}
             <br />
             Height: {hero.appearance.height[1]}
@@ -73,7 +74,11 @@ export const HeroCardTeam = ({ hero }) => {
             <br />
             Place of work: {hero.work.base}
           </ReactTooltip>
-          <button type="button" className="btn btn-danger m-1">
+          <button
+            onClick={deleteHero}
+            type="button"
+            className="btn btn-danger m-1"
+          >
             Delete
           </button>
         </div>
