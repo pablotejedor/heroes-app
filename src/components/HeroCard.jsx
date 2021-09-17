@@ -23,7 +23,7 @@ export const HeroCard = ({ hero, heroTeam, setHeroTeam }) => {
             }
           }}
           type="button"
-          className="btn btn-dark"
+          className="btn btn-light"
         >
           Add to my team
         </button>

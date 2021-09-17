@@ -11,13 +11,11 @@ export const HeroCardTeam = ({ hero, heroTeam, setHeroTeam }) => {
   };
   
   const deleteHero = () => {
-    const filteredList = heroTeam.filter(x => {
-      return x.id !== hero.id;
-    });
+    const filteredList = heroTeam.filter(element => element.id !== hero.id);
     setHeroTeam(filteredList)
   };
   return (
-    <div className="m-3 text-center" style={backgroundImage}>
+    <div className="m-3 text-center rounded" style={backgroundImage}>
       <img className="card-img-top" src={hero.image.url} alt={hero.id} />
       <div className="card-body">
         <h5 className="card-title">{hero.name}</h5>
@@ -26,13 +24,13 @@ export const HeroCardTeam = ({ hero, heroTeam, setHeroTeam }) => {
             type="button"
             className="btn btn-success m-1"
             data-tip="attributes"
-            data-for={hero.name}
+            data-for={hero.name + hero.id}
           >
             Attributes
           </button>
 
           <ReactTooltip
-            id={hero.name}
+            id={hero.name + hero.id}
             place="top"
             type="success"
             effect="solid"
