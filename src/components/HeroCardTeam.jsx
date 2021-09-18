@@ -14,6 +14,8 @@ export const HeroCardTeam = ({ hero, heroTeam, setHeroTeam }) => {
     const filteredList = heroTeam.filter(element => element.id !== hero.id);
     setHeroTeam(filteredList)
   };
+  // console.log('altura ' + parseInt(hero.appearance.height[1]))
+  // console.log('peso ' + parseInt(hero.appearance.weight[1]))
   return (
     <div className="m-3 text-center rounded" style={backgroundImage}>
       <img className="card-img-top" src={hero.image.url} alt={hero.id} />

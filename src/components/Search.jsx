@@ -21,7 +21,7 @@ export const Search = ({ heroTeam, setHeroTeam }) => {
     }
   };
   return (
-    <div className="mt-5">
+    <div className="m-5">
       <div>
         <div className="row">
           <div>

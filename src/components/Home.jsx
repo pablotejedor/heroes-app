@@ -5,9 +5,8 @@ export const Home = () => {
   const [heroTeam, setHeroTeam] = useState([]);
   return (
     <>
+      <MyTeam heroTeam={heroTeam} setHeroTeam={setHeroTeam} />
       <Search setHeroTeam={setHeroTeam} heroTeam={heroTeam} />
-      <h1>My team</h1>
-      <MyTeam heroTeam={heroTeam} setHeroTeam={setHeroTeam}/>
     </>
   );
 };
