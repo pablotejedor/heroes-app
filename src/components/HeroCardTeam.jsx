@@ -9,13 +9,12 @@ export const HeroCardTeam = ({ hero, heroTeam, setHeroTeam }) => {
     backgroundColor: `${colors[hero.biography.alignment]}`,
     width: '10rem',
   };
-  
+
   const deleteHero = () => {
     const filteredList = heroTeam.filter(element => element.id !== hero.id);
-    setHeroTeam(filteredList)
+    setHeroTeam(filteredList);
   };
-  // console.log('altura ' + parseInt(hero.appearance.height[1]))
-  // console.log('peso ' + parseInt(hero.appearance.weight[1]))
+
   return (
     <div className="m-3 text-center rounded" style={backgroundImage}>
       <img className="card-img-top" src={hero.image.url} alt={hero.id} />
@@ -37,17 +36,17 @@ export const HeroCardTeam = ({ hero, heroTeam, setHeroTeam }) => {
             type="success"
             effect="solid"
           >
-            Combat: {hero.powerstats.combat}
+            Combat: {parseInt(hero.powerstats.combat) || '-'}
             <br />
-            Durability: {hero.powerstats.durability}
+            Durability: {parseInt(hero.powerstats.durability) || '-'}
             <br />
-            Intelligence: {hero.powerstats.intelligence}
+            Intelligence: {parseInt(hero.powerstats.intelligence) || '-'}
             <br />
-            Power: {hero.powerstats.power}
+            Power: {parseInt(hero.powerstats.power) || '-'}
             <br />
-            Speed: {hero.powerstats.speed}
+            Speed: {parseInt(hero.powerstats.speed) || '-'}
             <br />
-            Strength: {hero.powerstats.strength}
+            Strength: {parseInt(hero.powerstats.strength) || '-'}
           </ReactTooltip>
           <button
             type="button"

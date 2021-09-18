@@ -34,10 +34,6 @@ export const Search = ({ heroTeam, setHeroTeam }) => {
                 if (!value.search) {
                   errors.search = 'Required';
                 }
-                //  else if (!/^[a-zA-Z]+$/.test(value.search)) {
-                //   errors.search = 'Please enter a valid input';
-                // }
-
                 return errors;
               }}
               initialValues={{
@@ -50,9 +46,9 @@ export const Search = ({ heroTeam, setHeroTeam }) => {
                     <Field
                       type="search"
                       className="form-control m-1"
-                      //   id="inputsearch"
                       name="search"
                       placeholder="Search a hero by name"
+                      autoComplete='off'
                     />
                     {errors.search && touched.search ? (
                       <div className="text-danger">{errors.search}</div>

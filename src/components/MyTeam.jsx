@@ -9,25 +9,29 @@ export const MyTeam = ({ heroTeam, setHeroTeam }) => {
   let averageWeight = getAverageWeight(heroTeam);
 
   return (
-    <div className='m-5'>
+    <div className="m-5">
       <h1>My team</h1>
       <div className="d-flex text-center">
-        <div className="m-3">
+        <div className="m-3 p-3 border rounded">
           <h4>Overall Stats:</h4>
           <div className="d-flex">
             {overallStats.map(stat => (
-              <h5 className="m-1">
-                {stat.stat}: {stat.value}
+              <h5 className="m-1 p-2 border rounded" style={{backgroundColor: stat.color}}>
+                {stat.stat}: {stat.value || '-'}
               </h5>
             ))}
           </div>
         </div>
 
-        <div className="m-3">
+        <div className="m-3 p-3 border rounded">
           <h4>Average Appearance:</h4>
           <div className="d-flex">
-            <h5 className="m-2">Average Height: {averageHeight || 0} cm</h5>
-            <h5 className="m-2">Average Weight: {averageWeight || 0} kg</h5>
+            <h5 className="m-2 p-3 border rounded">
+              Height: {averageHeight || '-'} cm
+            </h5>
+            <h5 className="m-2 p-3 border rounded">
+              Weight: {averageWeight || '-'} kg
+            </h5>
           </div>
         </div>
       </div>
