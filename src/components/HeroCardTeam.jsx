@@ -7,7 +7,7 @@ export const HeroCardTeam = ({ hero, heroTeam, setHeroTeam }) => {
   };
   const backgroundImage = {
     backgroundColor: `${colors[hero.biography.alignment]}`,
-    width: '10rem',
+    width: '14rem'
   };
 
   const deleteHero = () => {
@@ -20,7 +20,7 @@ export const HeroCardTeam = ({ hero, heroTeam, setHeroTeam }) => {
       <img className="card-img-top" src={hero.image.url} alt={hero.id} />
       <div className="card-body">
         <h5 className="card-title">{hero.name}</h5>
-        <div className="d-flex flex-column">
+        <div className="d-flex flex-column space-between">
           <button
             type="button"
             className="btn btn-success m-1"

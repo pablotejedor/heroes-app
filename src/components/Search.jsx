@@ -42,7 +42,7 @@ export const Search = ({ heroTeam, setHeroTeam }) => {
             >
               {({ errors, isValid, touched }) => (
                 <Form>
-                  <div className="d-flex m-3">
+                  <div className="d-flex m-3 align-items-center">
                     <Field
                       type="search"
                       className="form-control m-1"
