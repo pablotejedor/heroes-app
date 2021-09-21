@@ -15,12 +15,12 @@ export const getOverallStats = heroTeam => {
     overallStrength += parseInt(heroTeam[i].powerstats.strength) || 0;
   }
   const totalStats = [
-    { stat: 'Combat', value: overallCombat, color:'bg-danger' },
-    { stat: 'Durability', value: overallDurability, color:'bg-secondary' },
-    { stat: 'Intelligence', value: overallIntelligence, color:'bg-primary' },
-    { stat: 'Power', value: overallPower, color:'bg-info' },
-    { stat: 'Speed', value: overallSpeed, color:'bg-success' },
-    { stat: 'Strength', value: overallStrength, color:'bg-warning' },
+    { stat: 'Com', value: overallCombat, color:'bg-danger' },
+    { stat: 'Dur', value: overallDurability, color:'bg-secondary' },
+    { stat: 'Int', value: overallIntelligence, color:'bg-primary' },
+    { stat: 'Pwr', value: overallPower, color:'bg-info' },
+    { stat: 'Spd', value: overallSpeed, color:'bg-success' },
+    { stat: 'Str', value: overallStrength, color:'bg-warning' },
   ];
   const sortedTotalStats = totalStats.sort((a, b) => b.value - a.value);
   return sortedTotalStats;

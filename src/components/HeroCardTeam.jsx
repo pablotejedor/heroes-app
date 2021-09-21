@@ -11,12 +11,12 @@ export const HeroCardTeam = ({ hero, heroTeam, setHeroTeam }) => {
   };
 
   const deleteHero = () => {
-    const filteredList = heroTeam.filter(element => element.id !== hero.id);
+    const filteredList = heroTeam.filter(element => element.internalId !== hero.internalId);
     setHeroTeam(filteredList);
   };
-
+  
   return (
-    <div className="m-3 text-center rounded" style={backgroundImage}>
+    <div className="m-3 text-center rounded border" style={backgroundImage}>
       <img className="card-img-top" src={hero.image.url} alt={hero.id} />
       <div className="card-body">
         <h5 className="card-title">{hero.name}</h5>
