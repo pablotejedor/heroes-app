@@ -20,5 +20,5 @@ Debido a que uno de los requerimientos del challenge es que el equipo debe estar
 Con respecto al acumulado de powerstats, se ordenarán de mayor a menor automáticamente, de izquierda a derecha. En el caso de ver la aplicación en un dispositivo con un viewport mas chico, se ordenarán de arriba hacia abajo.
 
 ## Otras consideraciones
-Para este proyecto usé Formik para las validaciones de los formularios, Bootstrap y animate.css para los estilos, react-tooltip para mostrar los datos de los héroes de una forma no invasiva para la ui, y axios para las request tanto del login como de la búsqueda.
+Para este proyecto usé Formik para las validaciones de los formularios, Bootstrap y animate.css para los estilos, react-tooltip para mostrar los datos de los héroes de una forma no invasiva para la ui, react-router para la navegación, y axios para las request tanto del login como de la búsqueda.
 
