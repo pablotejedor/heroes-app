@@ -11,7 +11,7 @@ export const HeroCardTeam = ({ hero, heroTeam, setHeroTeam }) => {
   };
 
   const deleteHero = () => {
-    const filteredList = heroTeam.filter(element => element.internalId !== hero.internalId);
+    const filteredList = heroTeam.filter(element => element.id !== hero.id);
     setHeroTeam(filteredList);
   };
   
