@@ -7,7 +7,7 @@ App creada como parte del challenge de ingreso para Alkemy.
 Para usar esta app, además de clonar el repositorio y reconstruir los módulos de npm, es ***absolutamente necesario*** entrar a [este link](https://cors-anywhere.herokuapp.com/corsdemo) y hacer click en el botón ***Request temporary access to the demo server***. Esto es debido a que la api que me solicitaron que use no devuelve los headers necesarios para que te permita hacer las request. Al hacer click en el botón, cors-anywhere actúa de 'intermediario' entre el usuario y la api y le solicita los headers necesarios.
 
 ## Sobre el login
-Intentar entrar a cualquier dirección sin estar autenticado, resultará en una redirección al login. El email y la contraseña necesarios para obtener el token son los que me proporcionaron en el pdf.
+Intentar entrar a cualquier dirección sin estar autenticado, resultará en una redirección al login. El email requerido para logearse es challenge@alkemy.org y la contraseña es react.
 
 ## Sobre la inconsistencia de la falta de datos
 Aquellos héroes cuyos powerstats y características físicas (altura y peso) sean null, serán considerados como cero para el acumulado de powerstats y promedio de altura-peso del equipo, respectivamente.
